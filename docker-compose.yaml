@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+    chrome:
+        image: selenium/standalone-chrome:latest
+        hostname: chrome
+        shm_size: 2g
+    scrapper:
+        build: .
+        depends_on:
+            - chrome
