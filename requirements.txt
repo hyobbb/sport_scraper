@@ -1,3 +1,4 @@
 scrapy
-scrapy-selenium
+selenium
 pandas
+numpy

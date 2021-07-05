@@ -49,15 +49,10 @@ ROBOTSTXT_OBEY = True
 #}
 
 
-SELENIUM_DRIVER_NAME = 'chrome'
-SELENIUM_COMMAND_EXECUTOR = 'http://chrome:4444/wd/hub'
-SELENIUM_DRIVER_ARGUMENTS=['-headless']  # '--headless' if using chrome instead of firefox
-
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'sport_scraper.middlewares.SportScraperDownloaderMiddleware': 543,
-   'scrapy_selenium.SeleniumMiddleware': 800
 }
 
 # Enable or disable extensions
@@ -68,9 +63,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'sport_scraper.pipelines.SportScraperPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'sport_scraper.pipelines.SportScraperPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
