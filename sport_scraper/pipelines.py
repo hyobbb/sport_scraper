@@ -7,11 +7,19 @@
 # useful for handling different item types with a single interface
 import pandas as pd
 import json
+import pymysql
 from itemadapter import ItemAdapter
 
 
 class SportScraperPipeline:
 
+    def open_spider(self, spider):
+        #self.connection = pymysql.connect()
+        pass
+
+    def close_spider(self, spider):
+        #self.connection.close()
+        pass
 
     def process_item(self, item, spider):
         score_board = item['score_board']

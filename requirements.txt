@@ -2,3 +2,4 @@ scrapy
 selenium
 pandas
 numpy
+pymysql

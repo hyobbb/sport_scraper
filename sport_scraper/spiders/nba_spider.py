@@ -12,6 +12,11 @@ from ..items import NBAResult
 class NBASpider(scrapy.Spider):
     name = "nba"
     allowed_domains = ['nba.com']
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'pipelines.SportScraperPipeline': 300,
+        }
+    }
 
     def __init__(self, date=None):
         self.date = datetime.now().strftime('%Y-%m-%d') if date is None else date
