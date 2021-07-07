@@ -88,3 +88,9 @@ DOWNLOADER_MIDDLEWARES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+from os import environ
+
+DB_HOST = environ.get('MARIADB_ROOT_HOST')
+DB_USER = environ.get('MARIADB_USER')
+DB_PASSWORD = environ.get('MARIADB_PASSWORD')
+DB_NAME = environ.get('MARIADB_DATABASE')

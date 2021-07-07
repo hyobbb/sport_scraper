@@ -15,5 +15,6 @@ class NBAResult(scrapy.Item):
 
 class LaligaResult(scrapy.Item):
     url = scrapy.Field()
-    score_board = scrapy.Field()
+    line_up = scrapy.Field()
     events = scrapy.Field()
+    statistics = scrapy.Field()
