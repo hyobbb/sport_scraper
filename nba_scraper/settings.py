@@ -1,4 +1,4 @@
-# Scrapy settings for sport_scraper project
+# Scrapy settings for nba_scraper project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'sport_scraper'
+BOT_NAME = 'nba_scraper'
 
-SPIDER_MODULES = ['sport_scraper.spiders']
-NEWSPIDER_MODULE = 'sport_scraper.spiders'
+SPIDER_MODULES = ['nba_scraper.spiders']
+NEWSPIDER_MODULE = 'nba_scraper.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'sport_scraper (+http://www.yourdomain.com)'
+#USER_AGENT = 'nba_scraper (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,15 +45,14 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'sport_scraper.middlewares.SportScraperSpiderMiddleware': 543,
+#    'nba_scraper.middlewares.NbaScraperSpiderMiddleware': 543,
 #}
-
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-   'sport_scraper.middlewares.SportScraperDownloaderMiddleware': 543,
-}
+#DOWNLOADER_MIDDLEWARES = {
+#    'nba_scraper.middlewares.NbaScraperDownloaderMiddleware': 543,
+#}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -63,9 +62,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    'sport_scraper.pipelines.SportScraperPipeline': 300,
-# }
+#ITEM_PIPELINES = {
+#    'nba_scraper.pipelines.NbaScraperPipeline': 300,
+#}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

@@ -5,50 +5,15 @@
 
 
 # useful for handling different item types with a single interface
+from items import TeamItem
 import pandas as pd
 import json
 import pymysql
+from pipelines import DBPipeline
 from itemadapter import ItemAdapter
 
 
-class LaligaSchedulePipeline:
-    
-    @classmethod
-    def from_crawler(cls, crawler):
-        return cls(
-            host = crawler.settings.get('DB_HOST'),
-            user = crawler.settings.get('DB_USER'),
-            password = crawler.settings.get('DB_PASSWORD'),
-            db = crawler.settings.get('DB_NAME'),
-        )
-
-    def __init__(self, host, user, password, db) -> None:
-        self.connection = pymysql.connect(
-            host = host,
-            user = user,
-            password = password,
-            database = db,
-        )
-
-    def close_spider(self, spider):
-        self.connection.close()
-
-    def process_item(self, item, spider):
-        url = item['url']
-        date = item['startDate']
-        away_team = item['awayTeam']['name']
-        home_team = item['homeTeam']['name']
-        location = item['location']['name']
-        return {
-            'url' : url,
-            'date' : date,
-            'away_team' : away_team,
-            'home_team' : home_team,
-            'location' : location,
-        }
-
-
-class SportScraperPipeline:
+class NBAPipeline:
 
     def open_spider(self, spider):
         #self.connection = pymysql.connect()
@@ -97,3 +62,51 @@ class SportScraperPipeline:
         with open('{}.js'.format(item['date']), 'a') as f:
             f.write(line)
         return item
+
+
+class NBATeamPipeline(DBPipeline):
+    def __init__(self, host, user, password, db) -> None:
+        super().__init__(host, user, password, db)
+        self.table = 'teams'
+
+    def process_item(self, item:TeamItem, spider):
+        cursor = self.connection.cursor()
+        official_site = item['official_site'].replace('//', 'https://')
+        division = item['division'].lower()
+        if division == 'atlantic' or division == 'central' or division == 'southeast':
+            conference = 'east'
+        else :
+            conference = 'west'
+        cursor.execute(
+            f'''INSERT INTO {self.table} (
+                sport_id, 
+                league_id, 
+                conference,
+                division,
+                name, 
+                short_name, 
+                official_site, 
+                logo_url
+            ) VALUES (
+                1, 
+                2,
+                '{conference}',
+                '{division}',
+                '{item['name']}', 
+                '{item['short_name']}', 
+                '{official_site}', 
+                '{item['logo_url']}'
+            )
+            ON DUPLICATE KEY UPDATE 
+            short_name = '{item['short_name']}', 
+            official_site = '{official_site}',
+            logo_url = '{item['logo_url']}'
+            '''
+        )
+        return item
+
+
+class NBASchedulePipeline(DBPipeline):
+    def __init__(self, host, user, password, db) -> None:
+        super().__init__(host, user, password, db)
+        self.table = 'matches'

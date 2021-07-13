@@ -6,11 +6,11 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from ..items import NBAResult
+from ..items import NBAResultItem
 
 
 class NBASpider(scrapy.Spider):
-    name = "nba"
+    name = "nba_result"
     allowed_domains = ['nba.com']
     custom_settings = {
         'ITEM_PIPELINES': {
@@ -94,7 +94,7 @@ class NBASpider(scrapy.Spider):
 
             item_new = deepcopy(item)
             item_new['box_score'] = box_score
-            yield NBAResult(
+            yield NBAResultItem(
                 game_id=item_new['game_id'],
                 date=self.date,
                 score_board=item_new['score_board'],
