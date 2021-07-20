@@ -31,7 +31,6 @@ class EPLSchedulePipeline(DBPipeline):
     def __init__(self, host, user, password, db) -> None:
         super().__init__(host, user, password, db)
         self.table = 'matches'
-
     def process_item(self, item, spider):
         super().process_item(item, spider)
         season_id = item['season_id']
