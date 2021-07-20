@@ -1,0 +1,294 @@
+{
+    "props": {
+        "pageProps": {
+            "lang": "es",
+            "country": "ES",
+            "match": {
+                "id": 22011,
+                "name": "Temporada 2021/2022 - LaLiga Santander - Valencia CF - Getafe CF - 1",
+                "slug": "temporada-2021-2022-laliga-santander-valencia-cf-getafe-cf-1",
+                "date": "2021-08-13T19:00:00+00:00",
+                "time": "2021-08-13T19:00:00+00:00",
+                "hashtag": "ValenciaGetafe",
+                "competition": {
+                    "id": 1,
+                    "name": "LaLiga Santander",
+                    "slug": "primera-division",
+                    "opta_id": "23"
+                },
+                "status": "PreMatch",
+                "attempt_official": false,
+                "home_team": {
+                    "id": 18,
+                    "slug": "valencia-cf",
+                    "name": "Valencia Club de Fútbol SAD",
+                    "nickname": "Valencia CF",
+                    "boundname": "Valencia CF",
+                    "shortname": "VAL",
+                    "color": "#ea7851",
+                    "sprite_status": "created",
+                    "shield": {
+                        "id": 155,
+                        "url": "https://assets.laliga.com/assets/2019/06/07/medium/valencia.png"
+                    },
+                    "competitions": [],
+                    "opta_id": "t191"
+                },
+                "away_team": {
+                    "id": 9,
+                    "slug": "getafe-cf",
+                    "name": "Getafe Club de Fútbol SAD",
+                    "nickname": "Getafe CF",
+                    "boundname": "Getafe CF",
+                    "shortname": "GET",
+                    "color": "#1476c4",
+                    "sprite_status": "created",
+                    "shield": {
+                        "id": 137,
+                        "url": "https://assets.laliga.com/assets/2019/06/07/medium/getafe.png"
+                    },
+                    "competitions": [],
+                    "opta_id": "t1450"
+                },
+                "gameweek": {
+                    "week": 1,
+                    "name": "Jornada 1",
+                    "shortname": "J1"
+                },
+                "venue": {
+                    "name": "Camp de Mestalla"
+                },
+                "season": {
+                    "id": 9,
+                    "name": "Temporada 2021/2022",
+                    "opta_id": "2021"
+                },
+                "subscription": {
+                    "id": 116,
+                    "slug": "laliga-santander-2021",
+                    "teams": [],
+                    "rounds": []
+                },
+                "is_brand_day": false,
+                "opta_id": "g2219264"
+            },
+            "events": [],
+            "tabActive": "previous",
+            "data": {
+                "teamsStats": {
+                    "home": {},
+                    "away": {}
+                },
+                "previousMatches": {
+                    "home": [],
+                    "away": []
+                },
+                "standing": {
+                    "home": {
+                        "played": 0,
+                        "points": 0,
+                        "won": 0,
+                        "drawn": 0,
+                        "lost": 0,
+                        "goals_for": 0,
+                        "goals_against": 0,
+                        "goal_difference": "0",
+                        "position": 19,
+                        "previous_position": 19,
+                        "difference_position": 0,
+                        "team": {
+                            "id": 18,
+                            "slug": "valencia-cf",
+                            "name": "Valencia Club de Fútbol SAD",
+                            "nickname": "Valencia CF",
+                            "boundname": "Valencia CF",
+                            "shortname": "VAL",
+                            "color": "#ea7851",
+                            "color_secondary": "#ffffff",
+                            "foundation": "1919-03-18T00:00:00+00:00",
+                            "web": "http://www.valenciacf.com",
+                            "sprite_status": "created",
+                            "shield": {
+                                "id": 155,
+                                "name": "Escudo VCF",
+                                "caption": "Escudo VCF",
+                                "url": "https://assets.laliga.com/assets/2019/06/07/xlarge/valencia.png",
+                                "resizes": {
+                                    "xsmall": "https://assets.laliga.com/assets/2019/06/07/xsmall/valencia.png",
+                                    "small": "https://assets.laliga.com/assets/2019/06/07/small/valencia.png",
+                                    "medium": "https://assets.laliga.com/assets/2019/06/07/medium/valencia.png",
+                                    "large": "https://assets.laliga.com/assets/2019/06/07/large/valencia.png",
+                                    "xlarge": "https://assets.laliga.com/assets/2019/06/07/xlarge/valencia.png"
+                                }
+                            },
+                            "competitions": [],
+                            "opta_id": "t191",
+                            "lde_id": 88
+                        }
+                    },
+                    "away": {
+                        "played": 0,
+                        "points": 0,
+                        "won": 0,
+                        "drawn": 0,
+                        "lost": 0,
+                        "goals_for": 0,
+                        "goals_against": 0,
+                        "goal_difference": "0",
+                        "position": 8,
+                        "previous_position": 8,
+                        "difference_position": 0,
+                        "team": {
+                            "id": 9,
+                            "slug": "getafe-cf",
+                            "name": "Getafe Club de Fútbol SAD",
+                            "nickname": "Getafe CF",
+                            "boundname": "Getafe CF",
+                            "shortname": "GET",
+                            "color": "#1476c4",
+                            "foundation": "1983-03-30T00:00:00+00:00",
+                            "web": "http://www.getafecf.com/",
+                            "sprite_status": "created",
+                            "shield": {
+                                "id": 137,
+                                "name": "Escudo GTF",
+                                "caption": "Escudo GTF",
+                                "url": "https://assets.laliga.com/assets/2019/06/07/xlarge/getafe.png",
+                                "resizes": {
+                                    "xsmall": "https://assets.laliga.com/assets/2019/06/07/xsmall/getafe.png",
+                                    "small": "https://assets.laliga.com/assets/2019/06/07/small/getafe.png",
+                                    "medium": "https://assets.laliga.com/assets/2019/06/07/medium/getafe.png",
+                                    "large": "https://assets.laliga.com/assets/2019/06/07/large/getafe.png",
+                                    "xlarge": "https://assets.laliga.com/assets/2019/06/07/xlarge/getafe.png"
+                                }
+                            },
+                            "competitions": [],
+                            "opta_id": "t1450",
+                            "lde_id": 51
+                        }
+                    }
+                },
+                "leaders": {
+                    "home": [],
+                    "away": []
+                }
+            },
+            "statusCode": 200,
+            "brandDayAssets": false,
+            "ssrTabs": [
+                "previous"
+            ]
+        },
+        "lang": "es",
+        "country": "ES",
+        "globalData": {
+            "STATICS_TIMESTAMP": "20210701111800884324",
+            "COMPETITION_CONFIG": {
+                "copa-del-rey": {
+                    "filters": "2020",
+                    "results": "2020",
+                    "subscription_id": "103"
+                },
+                "europa-league": {
+                    "filters": "2020",
+                    "results": "2020",
+                    "subscription_id": "101"
+                },
+                "uefa-eurocopa": {
+                    "filters": "2020",
+                    "results": "2020",
+                    "subscription_id": "113"
+                },
+                "laliga-genuine": {
+                    "filters": "2019",
+                    "results": "2019",
+                    "subscription_id": "92"
+                },
+                "champions-league": {
+                    "filters": "2020",
+                    "results": "2020",
+                    "subscription_id": "102"
+                },
+                "copa-de-la-reina": {
+                    "filters": "2020",
+                    "results": "2020",
+                    "subscription_id": "114"
+                },
+                "primera-division": {
+                    "clubs": "2021",
+                    "squad": "2021",
+                    "stats": "2020",
+                    "filters": "2021",
+                    "leaders": "2020",
+                    "results": "2021",
+                    "standing": "2021",
+                    "stats_team": "2021",
+                    "subscription_id": "116",
+                    "stats_competition": "2021"
+                },
+                "segunda-division": {
+                    "clubs": "2021",
+                    "squad": "2021",
+                    "stats": "2020",
+                    "filters": "2021",
+                    "leaders": "2021",
+                    "results": "2021",
+                    "standing": "2021",
+                    "stats_team": "2021",
+                    "subscription_id": "117",
+                    "stats_competition": "2021"
+                },
+                "supercopa-de-espana": {
+                    "filters": "2020",
+                    "results": "2020",
+                    "subscription_id": "104"
+                },
+                "supercopa-de-europa": {
+                    "filters": "2021",
+                    "results": "2021",
+                    "subscription_id": "119"
+                },
+                "copa-mundial-de-clubes": {
+                    "filters": "2020",
+                    "results": "2020",
+                    "subscription_id": "107"
+                },
+                "primera-division-femenina": {
+                    "clubs": "2021",
+                    "squad": "2021",
+                    "stats": "2020",
+                    "filters": "2021",
+                    "leaders": "2020",
+                    "results": "2020",
+                    "standing": "2021",
+                    "stats_team": "2021",
+                    "subscription_id": "118",
+                    "stats_competition": "2021"
+                },
+                "primera-nacional-femenina": {
+                    "results": "2019",
+                    "standing": "2019",
+                    "subscription_id": "91"
+                },
+                "segunda-division-femenina": {
+                    "results": "2019",
+                    "standing": "2019",
+                    "subscription_id": "90"
+                }
+            },
+            "VERSION_SPRITE": "20210628092810572410"
+        }
+    },
+    "page": "/match",
+    "query": {
+        "slug": "temporada-2021-2022-laliga-santander-valencia-cf-getafe-cf-1"
+    },
+    "buildId": "e488a43c822df566bba2db0b3f5bba2c6edcda61",
+    "isFallback": false,
+    "dynamicIds": [
+        "cpGi"
+    ],
+    "customServer": true,
+    "gip": true,
+    "appGip": true
+}

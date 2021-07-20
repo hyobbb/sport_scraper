@@ -5,7 +5,7 @@
 
 
 # useful for handling different item types with a single interface
-from items import TeamItem
+from nba_scraper.items import NBATeamItem
 import pandas as pd
 import json
 import pymysql
@@ -68,41 +68,36 @@ class NBATeamPipeline(DBPipeline):
     def __init__(self, host, user, password, db) -> None:
         super().__init__(host, user, password, db)
         self.table = 'teams'
+        self.table_standings = 'basketball_standings'
+        self.cursor = self.connection.cursor()
 
-    def process_item(self, item:TeamItem, spider):
-        cursor = self.connection.cursor()
+    def process_item(self, item:NBATeamItem, spider):
+        name = item['name']
+        short_name = item['short_name']
+        official_site = item['official_site']
+        logo_url = item['logo_url']
+       
         official_site = item['official_site'].replace('//', 'https://')
         division = item['division'].lower()
         if division == 'atlantic' or division == 'central' or division == 'southeast':
             conference = 'east'
         else :
             conference = 'west'
-        cursor.execute(
-            f'''INSERT INTO {self.table} (
-                sport_id, 
-                league_id, 
-                conference,
-                division,
-                name, 
-                short_name, 
-                official_site, 
-                logo_url
-            ) VALUES (
-                1, 
-                2,
-                '{conference}',
-                '{division}',
-                '{item['name']}', 
-                '{item['short_name']}', 
-                '{official_site}', 
-                '{item['logo_url']}'
-            )
+        query =  f'''INSERT INTO {self.table} 
+            (sport_id, name, short_name, official_site, logo_url)
+            VALUES (2, '{name}', '{short_name}', '{official_site}', '{logo_url}')
             ON DUPLICATE KEY UPDATE 
-            short_name = '{item['short_name']}', 
+            short_name = '{short_name}', 
             official_site = '{official_site}',
-            logo_url = '{item['logo_url']}'
+            logo_url = '{logo_url}'
             '''
-        )
+        self.cursor.execute(query)
+        
+        query =  f'''INSERT IGNORE INTO {self.table_standings} 
+            (conference, division, season_id, team_id)
+            VALUES ('{conference}', '{division}', 2, (SELECT id FROM {self.table} WHERE name = '{name}'))
+            '''
+        self.cursor.execute(query)
         return item
 
 
