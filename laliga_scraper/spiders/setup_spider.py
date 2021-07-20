@@ -49,14 +49,12 @@ class LaligaScheduleSpider(scrapy.Spider):
         self.end_week = end_week
 
     def start_requests(self):
-        urls = [
-            f'https://www.laliga.com/en-ES/laliga-santander/results/2021-22/gameweek-{week}'
-            for week in range(self.start_week, self.end_week+1)
-        ]
-        for url in urls:
-            yield scrapy.Request(url=url, callback=self.parse)
+        for week in range(self.start_week, self.end_week+1):
+            url = f'https://www.laliga.com/en-ES/laliga-santander/results/2021-22/gameweek-{week}'
+            yield scrapy.Request(url=url, callback=self.parse, meta={'week':week})
 
     def parse(self, response):
+        week = response.meta['week']
         data = response.xpath(
             "//script[@type=\"application/ld+json\"]//text()").extract()
 
@@ -64,6 +62,9 @@ class LaligaScheduleSpider(scrapy.Spider):
             item = json.loads(item)
             if item['@type'] == 'SportsEvent':
                 yield MatchItem(
+                    season_id = 2,
+                    competition_id = 2,
+                    game_number = week,
                     url=item['url'],
                     scheduled_date=item['startDate'],
                     away_team=item['awayTeam']['name'],

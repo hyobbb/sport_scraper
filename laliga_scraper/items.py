@@ -6,3 +6,6 @@
 import scrapy
 
 
+class StandingList(scrapy.Item):
+    data = scrapy.Field()
+

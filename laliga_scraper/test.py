@@ -1,5 +1,5 @@
 from datetime import datetime
-from pytz import timezone
+from pytz import timezone, all_timezones
 
 def to_CET(value) -> str:
     dt = datetime.fromisoformat(value)
@@ -10,4 +10,4 @@ def to_CET(value) -> str:
 
 
 cet = to_CET('2021-03-17T18:00:00+00:00')
-print(cet)
+print(all_timezones)

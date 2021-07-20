@@ -1,4 +1,5 @@
 from copy import deepcopy
+from nba_scraper.items import NBATeamItem
 import scrapy
 from datetime import datetime
 from selenium import webdriver
@@ -34,7 +35,7 @@ class NBATeamSpider(scrapy.Spider):
                     name = team.css('a::attr(data-text)').get()
                     official_site = team.css('a::attr(href)').get()
                     logo_url = team.css('img').attrib['src']
-                    yield TeamItem(
+                    yield NBATeamItem(
                         name = name,
                         short_name = short_name,
                         official_site = official_site,
@@ -77,5 +78,7 @@ class NBAScheduleSpider(scrapy.Spider):
                 print(week)
                 print(week.text)
         except TimeoutException:
+            self.driver.close()
+        finally :
             self.driver.close()
   

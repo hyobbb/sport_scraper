@@ -1,14 +1,13 @@
-from laliga_scraper.items import LigaMatchItem
-from items import  TeamItem
+from items import  MatchItem, TeamItem
 from pipelines import DBPipeline
 from itemadapter import ItemAdapter
 from datetime import datetime
 
 
-class LaligaTeamPipeline(DBPipeline):
+class EPLTeamPipeline(DBPipeline):
     def __init__(self, host, user, password, db) -> None:
         super().__init__(host, user, password, db)
-        self.season_id = 2
+        self.sport_id = 2
         self.table = 'teams'
         self.cursor = self.connection.cursor()
 
@@ -28,26 +27,25 @@ class LaligaTeamPipeline(DBPipeline):
         return item
 
 
-class LaligaSchedulePipeline(DBPipeline):
+class EPLSchedulePipeline(DBPipeline):
     def __init__(self, host, user, password, db) -> None:
         super().__init__(host, user, password, db)
         self.table = 'matches'
         
-    def process_item(self, item: LigaMatchItem, spider):
+    def process_item(self, item, spider):
         super().process_item(item, spider)
         season_id = item['season_id']
         competition_id = item['competition_id']
         game_number = item['game_number']
-        url = item['url']
-        date = datetime.fromisoformat(item['scheduled_date'])
+        url = 'https:' + item['url'] 
+        date = datetime.fromtimestamp(item['scheduled_date']/1000)
         away_team = item['away_team']
         home_team = item['home_team']
         location = item['location']
 
-        scheduled_date = self.to_CET(date)
-        timezone = 'CET'
+        timezone = item['tzone']
+        scheduled_date = self.to_local(date, timezone)
         scheduled_date_utc = self.to_string(date)
-
         cursor = self.connection.cursor()
         cursor.execute(
             f'''INSERT INTO {self.table} (
@@ -95,10 +93,13 @@ class LaligaSchedulePipeline(DBPipeline):
     def to_string(self, dt: datetime) -> str:
         return dt.strftime('%Y-%m-%d %H:%M:%S')
 
-    def to_CET(self, dt: datetime) -> str:
+    def to_local(self, dt: datetime, tz:str) -> str:
         from pytz import timezone
-        cet = timezone('CET')
-        dt = dt.astimezone(cet)
+        if tz == 'BST':
+            local_tz = timezone('Etc/GMT+1')
+        else :
+            local_tz = timezone('Etc/GMT')      
+        dt = dt.astimezone(local_tz)
         return self.to_string(dt)
 
 

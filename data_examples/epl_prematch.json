@@ -1,0 +1,107 @@
+{
+    "gameweek": {
+        "id": 6662,
+        "compSeason": {
+            "label": "2021/22",
+            "competition": {
+                "abbreviation": "EN_PR",
+                "description": "Premier League",
+                "level": "SEN",
+                "source": "",
+                "id": 1,
+                "altIds": {
+                    "opta": "8"
+                }
+            },
+            "id": 418
+        },
+        "gameweek": 1,
+        "competitionPhase": {
+            "id": 1486,
+            "type": "L",
+            "gameweekRange": [
+                1,
+                38
+            ]
+        }
+    },
+    "kickoff": {
+        "completeness": 3,
+        "millis": 1628881200000,
+        "label": "Fri 13 Aug 2021, 20:00 BST",
+        "gmtOffset": 1
+    },
+    "provisionalKickoff": {
+        "completeness": 3,
+        "millis": 1628881200000,
+        "label": "Fri 13 Aug 2021, 20:00 BST",
+        "gmtOffset": 1
+    },
+    "teams": [
+        {
+            "team": {
+                "name": "Brentford",
+                "club": {
+                    "name": "Brentford",
+                    "shortName": "Brentford",
+                    "abbr": "BRE",
+                    "id": 130
+                },
+                "teamType": "FIRST",
+                "shortName": "Brentford",
+                "id": 130,
+                "altIds": {
+                    "opta": "t94"
+                }
+            },
+            "opta": "t94",
+            "clubBadge": "https://resources.premierleague.com/premierleague/badges/25/t94.png",
+            "clubBadgeRetina": "https://resources.premierleague.com/premierleague/badges/25/t94@x2.png",
+            "url": "//www.premierleague.com/clubs/130/Brentford/overview"
+        },
+        {
+            "team": {
+                "name": "Arsenal",
+                "club": {
+                    "name": "Arsenal",
+                    "shortName": "Arsenal",
+                    "abbr": "ARS",
+                    "id": 1
+                },
+                "teamType": "FIRST",
+                "shortName": "Arsenal",
+                "id": 1,
+                "altIds": {
+                    "opta": "t3"
+                }
+            },
+            "opta": "t3",
+            "clubBadge": "https://resources.premierleague.com/premierleague/badges/25/t3.png",
+            "clubBadgeRetina": "https://resources.premierleague.com/premierleague/badges/25/t3@x2.png",
+            "url": "//www.premierleague.com/clubs/1/Arsenal/overview"
+        }
+    ],
+    "replay": false,
+    "ground": {
+        "name": "Brentford Community Stadium",
+        "city": "Brentford",
+        "source": "OPTA",
+        "id": 3077
+    },
+    "neutralGround": false,
+    "status": "U",
+    "phase": "0",
+    "fixtureType": "REGULAR",
+    "extraTime": false,
+    "shootout": false,
+    "goals": [],
+    "penaltyShootouts": [],
+    "behindClosedDoors": false,
+    "id": 66342,
+    "altIds": {
+        "opta": "g2210271"
+    },
+    "matchDate": "Saturday 14 August 2021",
+    "kickOffTime": "04:00",
+    "url": "//www.premierleague.com/match/66342"
+}
